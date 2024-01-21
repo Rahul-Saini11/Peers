@@ -16,14 +16,12 @@ mongoose
   .then(() => {
     console.log("connected to database💥");
   });
-
-server.listen(3000, () => {
-  console.log("Server is running on prt 3000");
+const port = process.env.PORT || 3000;
+server.listen(port, () => {
+  console.log("Server is running on port ", port);
 });
 //handle the promises rejection whose rejection have not been handled
 process.on("unhandledRejection", (err) => {
-  console.log("unhandler Rejection! 💥 Shutting down.....");
-  console.log(err.name, err.message);
   server.close(() => {
     process.exit(1);
   });
