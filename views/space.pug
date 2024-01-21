@@ -21,7 +21,8 @@ html(lang="en")
             .control-btn#audio-btn
                 img(src="./icon/mic.png", alt="icon", class='icon')
                 img(src="./icon/mic-disable.png", alt="icon", class='icon mic-disable')
-            .control-btn#leave-btn
-                img#leave(src="./icon/leave.png", alt="leave", class='icon')
+            .control-btn1#leave-btn
+                a(href="/") 
+                    img#leave(src="./icon/leave.png", alt="leave", class='icon')
     script(src="/socket.io/socket.io.js") 
     script(src="./js/bundle.js") 
