@@ -12,7 +12,7 @@ const darkModeButton = document.getElementById("dark-mode");
 const lf = document.querySelector(".lf");
 
 const signup = async (data) => {
-  const res = await fetch("http://localhost:3000/api/v1/user/signup", {
+  const res = await fetch("/api/v1/user/signup", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -32,7 +32,7 @@ const signup = async (data) => {
 };
 
 const login = async (data) => {
-  const res = await fetch("http://localhost:3000/api/v1/user/login", {
+  const res = await fetch("/api/v1/user/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -52,8 +52,7 @@ const login = async (data) => {
 };
 
 const logout = async () => {
-  console.log("running");
-  const res = await fetch("http://localhost:3000/api/v1/user/logout", {
+  const res = await fetch("/api/v1/user/logout", {
     method: "GET",
   });
 
@@ -71,7 +70,7 @@ const logout = async () => {
 const enterSpaceHandler = async (spaceID) => {
   const data1 = { spaceID };
   try {
-    const res = await fetch("http://localhost:3000/api/v1/space/enter-space", {
+    const res = await fetch("/api/v1/space/enter-space", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -91,7 +90,7 @@ const enterSpaceHandler = async (spaceID) => {
 };
 
 const createSpaceHandler = async () => {
-  const res = await fetch("http://localhost:3000/api/v1/space/create-space", {
+  const res = await fetch("/api/v1/space/create-space", {
     method: "GET",
   });
   const data = await res.json();
